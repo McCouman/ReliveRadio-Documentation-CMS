@@ -46,26 +46,7 @@ if ($homepage && $homepage_url !== '/') {
 		<link rel="stylesheet" href="<?php echo $base_url ?>/css/daux-<?php echo $options['theme'];?>.css">
 	<?php } ?>
 	
-	<?php
-	//standard style
-	echo '<link rel="stylesheet" type="text/css" href="markitup/skins/simple/style.css" />';
-	//icons
-	echo '<link rel="stylesheet" type="text/css" href="markitup/sets/markdown/style.css" />';
-	?>
 	
-	<!-- jQuery -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-	<!-- markItUp! -->
-	<script type="text/javascript" src="markitup/jquery.markitup.js"></script>
-	<script type="text/javascript" src="markitup/sets/markdown/set.js"></script>
-
-
-<script language="javascript">
-   $(document).ready(function() {
-      $("#markItUp").markItUp(mySettings);
-   });
-</script>
-
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -88,13 +69,9 @@ if ($homepage && $homepage_url !== '/') {
 				</div>
 			</div>
 		</div>
-		
 		<div class="homepage-hero well container-fluid">
-			<div class="container">
-				
-			</div>
+			<div class="container"></div>
 		</div>
-		
 <?php 
 $userDir = "./docs/";
 $filename = $userDir . @$_GET['file'];
@@ -125,18 +102,34 @@ $savecontent = @$_POST['savecontent'];
 <div class="hero-buttons container-fluid">
 	<div class="container">
 		<div class="row">
-			<div class="text-center span12">
-			<center>
-				<textarea id="markItUp" style="width:100%" name="savecontent" cols="100%" rows="15"><?php echo $loadcontent; ?></textarea>
-				<br>
-				
-			</center
+		<div class="span12">
+			<div class="span6" style="float:left;">
+				<center>
+					<textarea id="text" style="width:99%" oninput="this.editor.update()" 
+					name="savecontent" cols="100%" rows="15"><?php echo $loadcontent; ?></textarea>
+				</center>
+			</div>
+
+			<div id="test" class="span5" style="border: 1px solid #ccc; float:left; background:#fff; padding-left: 10px; padding-right: 15px;"> </div>
+    			<script src="libs/markdown.js"></script>
+    			<script>
+      				function Editor(input, preview) {
+       					this.update = function () {
+          					preview.innerHTML = markdown.toHTML(input.value);
+        				};
+        				input.editor = this;
+        					this.update();
+      				}
+     				 var $ = function (id) { return document.getElementById(id); };
+      				new Editor($("text"), $("test"));
+   			 	</script>
 			</div>
 		</div>
 	</div>
 </div>
 <br>
 <center><input type="submit" name="save_file" value="Speichern"></center>
+<br>
 </form>
 <?
 } else {
@@ -144,6 +137,5 @@ $savecontent = @$_POST['savecontent'];
 echo "Error, file does not exist.";
 }
 ?>
-			
 </body>
 </html>
