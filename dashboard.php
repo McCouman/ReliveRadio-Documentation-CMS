@@ -168,7 +168,7 @@ if($sub){
 <h3>Erstelle eine neue Datei.</h3>
 <p><b>Lehrzeichen bitte immer als "_" angeben!</b></p>
 <input type="text" name="file" placeholder="Bsp: 01_Datei_Name" /><br>
-<input type="submit" value="Datei anlegen" name="submit" />
+<input type="submit" value="Datei erstellen" name="Submit" />
 </form>
 			</div>
 		</div>

@@ -23,14 +23,13 @@ if ($homepage && $homepage_url !== '/') {
 	<meta name="description" content="<?php echo $options['tagline'];?>" />
 	<meta name="author" content="<?php echo $options['title']; ?>">
 	<?php if ($options['colors']) { ?>
-	<link rel="icon" href="<?php echo $base_url ?>/img/favicon.png" type="image/x-icon">
+		<link rel="icon" href="<?php echo $base_url ?>/img/favicon.png" type="image/x-icon">
 	<?php } else { ?>
-	<link rel="icon" href="<?php echo $base_url ?>/img/favicon-<?php echo $options['theme'];?>.png" type="image/x-icon">
+		<link rel="icon" href="<?php echo $base_url ?>/img/favicon-<?php echo $options['theme'];?>.png" type="image/x-icon">
 	<?php } ?>
 	<!-- Mobile -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<!-- Font -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
 
@@ -46,14 +45,28 @@ if ($homepage && $homepage_url !== '/') {
 	<?php } else { ?>
 		<link rel="stylesheet" href="<?php echo $base_url ?>/css/daux-<?php echo $options['theme'];?>.css">
 	<?php } ?>
+	
+	<?php
+	//standard style
+	echo '<link rel="stylesheet" type="text/css" href="markitup/skins/simple/style.css" />';
+	//icons
+	echo '<link rel="stylesheet" type="text/css" href="markitup/sets/markdown/style.css" />';
+	?>
+	
+	<!-- jQuery -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+	<!-- markItUp! -->
+	<script type="text/javascript" src="markitup/jquery.markitup.js"></script>
+	<script type="text/javascript" src="markitup/sets/markdown/set.js"></script>
 
-	<!-- hightlight.js -->
-	<script src="<?php echo $base_url ?>/js/highlight.min.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
 
-	<!-- Navigation -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-	<script src="<?php echo $base_url ?>/js/custom.js"></script>
+<script language="javascript">
+   $(document).ready(function() {
+      $("#markItUp").markItUp(mySettings);
+   });
+</script>
+
+
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -113,9 +126,11 @@ $savecontent = @$_POST['savecontent'];
 	<div class="container">
 		<div class="row">
 			<div class="text-center span12">
-				<textarea style="width:70%" name="savecontent" cols="100%" rows="15"><?php echo $loadcontent; ?></textarea>
+			<center>
+				<textarea id="markItUp" style="width:100%" name="savecontent" cols="100%" rows="15"><?php echo $loadcontent; ?></textarea>
 				<br>
-
+				
+			</center
 			</div>
 		</div>
 	</div>
