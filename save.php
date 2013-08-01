@@ -1,17 +1,15 @@
 <?php
+$filename = @$_GET['file'];
 
-$filename = $_GET['file'];
-
-	chmod($filename, 0777);
+	@chmod($filename, 0777);
 
 	$loadcontent = $filename; 
-	$save_file = $_POST['save_file'];
-	$savecontent = $_POST['savecontent'];
-
-
+	$save_file = @$_POST['save_file'];
+	$savecontent = @$_POST['savecontent'];
 	$savecontent = str_replace("<?", "", $savecontent);
 	$savecontent = str_replace("?>", "", $savecontent);
 	$savecontent = stripslashes($savecontent);
+	
 	$l = "<br />";
         $fp = @fopen($loadcontent, "w");
         if ($fp) {
@@ -24,5 +22,5 @@ $filename = $_GET['file'];
           fclose($fp);
         }
 	
-echo "<meta http-equiv=\"REFRESH\" content=\"2; url=index.php\">";
+echo "<meta http-equiv=\"REFRESH\" content=\"2; url=dashboard.php\">";
 ?>
