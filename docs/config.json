@@ -1,0 +1,23 @@
+{
+	"version": "2.2",
+	"title": "Wikibyte Developing",
+	"tagline": "ReliveRadio Live Webplayer API",
+	"image": "img/app.png",
+	"theme": "green",
+	"twitter": ["ReliveRadio", "McCouman"],
+
+	"repo": "McCouman/ReLiveRadio-JsonP-about-Ajax",
+	
+	"piwik_analytics": "piwik.tools.wikibyte.org",
+	
+	"links": {
+		"ReliveRadio": "http://reliveradio.de",
+		"GitHub Repo": "https://github.com/McCouman/ReLiveRadio-JsonP-about-Ajax",
+		"LivePlayer": "http://cm.wikibyte.org/testcodes/neu-chapters/standalone.php?stream=mix&css=mix",
+		
+		"Made by McCouman": "http://labs.wikibyte.org"
+	}
+
+
+
+}
