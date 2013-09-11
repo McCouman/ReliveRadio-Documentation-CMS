@@ -12,7 +12,7 @@
 * @info: Aufbau und veränderter Podlove Standalone WebPlayer mit eigenen IDs, 
 *        auslesen der ReLive-Json List, Ajax Callbacks über JsonP, Einbau der RPSA & RPCA APIs
 * @developer: <a style="color: #08C;" href="https://flattr.com/profile/mccouman">Michael McCouman jr.</a>
-* @version: 0.1.0 - 2.1.9rc RSWP
+* @version: 0.1.0 - 2.1.10rc RSWP
 */</pre>
 **Name:** <a style="color: #08C;" href="http://reliveradio.de/">ReliveRadio</a> Livestream Webplayer
 **URI:** <a style="color: #08C;" href="https://github.com/McCouman/ReLiveRadio-JsonP-about-Ajax">https://github.com/McCouman/ReLiveRadio-JsonP-about-Ajax</a>
@@ -38,7 +38,7 @@ alt="Flattr This" title="Flattr This" style="max-width:100%;"> ReliveRadio</a>
 * @API: PRStA 
 * @info: Player Stream API zum verwenden der Relive Stream Bereiche in Standard und Mobile MP3 Daten
 * @developer: <a style="color: #08C;" href="https://flattr.com/profile/mccouman">Michael McCouman jr.</a>
-* @version: 2.1rc stream api
+* @version: 2.2.0 stream api
 */</pre>
 <pre>/**
 * @API: PRSA 
@@ -58,7 +58,7 @@ alt="Flattr This" title="Flattr This" style="max-width:100%;"> ReliveRadio</a>
 * @developer: <a style="color: #08C;" href="https://flattr.com/profile/mccouman">Michael McCouman jr.</a>
 * @version: 1.1.2 chapter api
 */</pre>
-**Version:** 2.1.9 
+**Version:** 2.1.10 
 **Author:** <a style="color: #08C;" href="https://github.com/McCouman">Michael McCouman jr.</a>
 
 **Author URI:** http://labs.wikibyte.org/ 
